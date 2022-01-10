@@ -1,6 +1,6 @@
 # bookifyy
 
-A new Flutter project.
+Tushar & Summit Notes App.
 
 ## Getting Started
 
