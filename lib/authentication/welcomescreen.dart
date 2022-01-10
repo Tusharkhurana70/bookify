@@ -1,3 +1,5 @@
+import 'package:bookifyy/authentication/signin.dart';
+import 'package:bookifyy/authentication/signup.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -22,7 +24,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: TextButton(
               style: ButtonStyle(fixedSize: MaterialStateProperty.all(Size(290, 61)),backgroundColor: MaterialStateProperty.all(Color(0xFF00C2EE)),shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.0)))),
               onPressed: (){
-                Navigator.pushNamed(context, 'signup');
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                  return SignUp();
+                }));
               },
               child: Text('Create Account',style: TextStyle(color: Colors.white,fontSize: 18),),
             ),
@@ -31,7 +35,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           TextButton(
             style: ButtonStyle(fixedSize: MaterialStateProperty.all(Size(290, 61)),shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.0),side: BorderSide(color: Color(0xFF00C2EE))))),
             onPressed: () {
-              Navigator.pushNamed(context, 'signin');
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                return SignIn();
+              }));
             },
             child: Text('Sign In',style: TextStyle(color: Color(0xFF00C2EE),fontSize: 18),),
           ),

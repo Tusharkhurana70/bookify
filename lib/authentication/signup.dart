@@ -98,7 +98,7 @@ class _SignUpState extends State<SignUp> {
                           final newUser=await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
                           setState(() {
                             if(newUser!=null){
-                              Navigator.push(context, MaterialPageRoute(builder: (context){
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
                                 return Course();
                               }));
                             }
@@ -126,7 +126,7 @@ class _SignUpState extends State<SignUp> {
                     Text('Already have an account?',style: TextStyle(color: Colors.black54),),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
                           return SignIn();
                         }));
                       },

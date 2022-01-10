@@ -115,7 +115,7 @@ class _SignInState extends State<SignIn> {
                             try{
                               final newUser=await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
                               if(newUser!=null){
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
                                   return Course();
                                 }));
                               }
@@ -142,7 +142,7 @@ class _SignInState extends State<SignIn> {
                         Text('Dont have an account?',style: TextStyle(color: Colors.black54),),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (Context) {
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (Context) {
                               return SignUp();
                             }));
                           },
