@@ -1,6 +1,10 @@
-import 'package:bookifyy/bca_Semester.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'c.dart';
+import 'it.dart';
+import 'maths.dart';
+import 'physics.dart';
+import 'tc.dart';
 
 class Sem1Bca extends StatefulWidget {
   @override
@@ -27,6 +31,9 @@ class _Sem1BcaState extends State<Sem1Bca> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return IT();
+                        }));
                       },
                       child: Image.asset('images/it.png',),
                     ),
@@ -37,6 +44,9 @@ class _Sem1BcaState extends State<Sem1Bca> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return Physics();
+                        }));
                       },
                       child: Image.asset('images/physics.png',),
                     ),
@@ -53,6 +63,9 @@ class _Sem1BcaState extends State<Sem1Bca> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return Maths();
+                        }));
                       },
                       child: Image.asset('images/maths.png',),
                     ),
@@ -63,6 +76,9 @@ class _Sem1BcaState extends State<Sem1Bca> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return TC();
+                        }));
                       },
                       child: Image.asset('images/tc.png',),
                     ),
@@ -79,6 +95,9 @@ class _Sem1BcaState extends State<Sem1Bca> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return C();
+                        }));
                       },
                       child: Image.asset('images/c.png',),
                     ),
