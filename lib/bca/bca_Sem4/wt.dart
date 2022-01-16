@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class IT extends StatefulWidget {
+class WT extends StatefulWidget {
   @override
-  _ITState createState() => _ITState();
+  _WTState createState() => _WTState();
 }
 
-class _ITState extends State<IT> {
+class _WTState extends State<WT> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
     return Scaffold(
-      backgroundColor: Colors.yellowAccent,
-      appBar: AppBar(backgroundColor: Colors.yellowAccent,title: Text('Information Technology',style: TextStyle(color: Colors.black),),),
+      backgroundColor: Color(0xFFFECF8B),
+      appBar: AppBar(backgroundColor: Color(0xFFFECF8B),title: Text('Web Technology',style: TextStyle(color: Colors.white),),),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -30,7 +30,7 @@ class _ITState extends State<IT> {
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
-                    Text('Syllabus',style: TextStyle(color: Colors.black,fontSize: 17))
+                    Text('Syllabus',style: TextStyle(color: Colors.white,fontSize: 17))
                   ],
                 ),
                 Column(
@@ -41,12 +41,12 @@ class _ITState extends State<IT> {
                       },
                       child: Image.asset('images/prevppr.png'),
                     ),
-                    Text('Prev Year PPR',style: TextStyle(color: Colors.black,fontSize: 16))
+                    Text('Prev Year PPR',style: TextStyle(color: Colors.white,fontSize: 16))
                   ],
                 )
               ],
             ),
-            SizedBox(height: height1*0.2),
+            SizedBox(height: height1*0.1),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -58,7 +58,7 @@ class _ITState extends State<IT> {
                       },
                       child: Image.asset('images/unit1.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
                   ],
                 ),
                 Column(
@@ -69,7 +69,35 @@ class _ITState extends State<IT> {
                       },
                       child: Image.asset('images/unit2.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                  ],
+                )
+              ],
+            ),
+            SizedBox(height: height1*0.1),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                      },
+                      child: Image.asset('images/unit3.png'),
+                    ),
+                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                  ],
+                ),
+                Column(
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                      },
+                      child: Image.asset('images/unit4.png'),
+                    ),
+                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
                   ],
                 )
               ],

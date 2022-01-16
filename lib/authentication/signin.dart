@@ -1,11 +1,11 @@
 // @dart=2.9
 import 'package:bookifyy/course.dart';
 import 'package:flutter/material.dart';
-import 'forgotPassword.dart';
+import 'forgotpassword.dart';
 import 'signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 bool tushar = true;
 
@@ -20,8 +20,9 @@ class _SignInState extends State<SignIn> {
   bool showSpinner=false;
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
+    var padding = MediaQuery.of(context).viewPadding;
+    double height1 = height - padding.top - padding.bottom;
     final player = new AudioCache();
     return Scaffold(
       body: ModalProgressHUD(
@@ -40,20 +41,20 @@ class _SignInState extends State<SignIn> {
                 ),
                 Column(
                   children: [
-                    SizedBox(height: 35),
+                    SizedBox(height: height1*0.06),
                     Padding(padding:EdgeInsets.only(left: 20),child: Text('Welcome Back,',style: TextStyle(color: Color(0xFF182B4C),fontSize: 30,fontWeight: FontWeight.bold),)),
-                    SizedBox(height: 20,),
+                    SizedBox(height: height1*0.03,),
                     Padding(padding:EdgeInsets.only(left: 20),child: Text('Sign in to continue',style: TextStyle(color: Colors.black54),)),
-                    SizedBox(height: 20,),
+                    SizedBox(height: height1*0.03,),
                     Padding(
                       padding: EdgeInsets.all(20),
                       child: ClipOval(
                         child: Image.asset('images/user4.png',height: 80,width: 80,),
                       ),
                     ),
-                    SizedBox(height: 25,),
+                    SizedBox(height: height1*0.02,),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      padding: EdgeInsets.all(height1*0.03),
                       child: TextField(
                         textAlign: TextAlign.start,
                         onChanged: (value) {
@@ -67,8 +68,7 @@ class _SignInState extends State<SignIn> {
                         keyboardType: TextInputType.emailAddress,
                       ),
                     ),
-                    SizedBox(height: 40,),
-                    Padding(padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    Padding(padding: EdgeInsets.all(height1*0.03),
                       child: TextField(
                           textAlign: TextAlign.start,
                           onChanged: (value) {
@@ -87,7 +87,6 @@ class _SignInState extends State<SignIn> {
                           obscureText: tushar
                       ),
                     ),
-                    SizedBox(height: 10,),
                     Padding(
                       padding: EdgeInsets.only(left: 220),
                       child: TextButton(
@@ -99,7 +98,7 @@ class _SignInState extends State<SignIn> {
                         child: Text('Forgot Password?',style: TextStyle(color: Color(0xFF626E82)),),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: height1*0.02,),
                     Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Material(
@@ -121,7 +120,7 @@ class _SignInState extends State<SignIn> {
                               }
                               setState(() {
                                 showSpinner=false;
-                                player.play('Audio 1.mp3');
+                                player.play('Audio c.mp3');
                               });
                             }
                             catch(e) {
@@ -135,7 +134,7 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: height1*0.03,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

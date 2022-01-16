@@ -14,7 +14,6 @@ class Sem1Bca extends StatefulWidget {
 class _Sem1BcaState extends State<Sem1Bca> {
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
@@ -35,7 +34,7 @@ class _Sem1BcaState extends State<Sem1Bca> {
                           return IT();
                         }));
                       },
-                      child: Image.asset('images/it.png',),
+                      child: Image.asset('images/it.png'),
                     ),
                     Text('I.T.',style: TextStyle(color: Colors.black,fontSize: 20),)
                   ],
@@ -55,7 +54,7 @@ class _Sem1BcaState extends State<Sem1Bca> {
                 )
               ],
             ),
-            SizedBox(height: height1 * 0.1),
+            SizedBox(height: height1 * 0.12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -67,7 +66,7 @@ class _Sem1BcaState extends State<Sem1Bca> {
                           return Maths();
                         }));
                       },
-                      child: Image.asset('images/maths.png',),
+                      child: Image.asset('images/math1.png',),
                     ),
                     Text('Maths',style: TextStyle(color: Colors.black,fontSize: 20))
                   ],
@@ -87,7 +86,7 @@ class _Sem1BcaState extends State<Sem1Bca> {
                 )
               ],
             ),
-            SizedBox(height: height1 * 0.1),
+            SizedBox(height: height1 * 0.12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

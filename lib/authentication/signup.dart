@@ -4,7 +4,7 @@ import 'signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import '../course.dart';
-import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 bool tushar = true;
 bool showSpinner=false;
@@ -22,6 +22,8 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
+    var padding = MediaQuery.of(context).viewPadding;
+    double height1 = height - padding.top - padding.bottom;
     final player = new AudioCache();
     return Scaffold(
       backgroundColor: Colors.white,
@@ -36,7 +38,7 @@ class _SignUpState extends State<SignUp> {
               children: [
                 Image.asset('images/signup3.png'),
                 Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.all(height1*0.03),
                   child: TextField(
                     textAlign: TextAlign.start,
                     onChanged: (value) {
@@ -51,7 +53,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.all(height1*0.03),
                   child: TextField(
                     textAlign: TextAlign.start,
                     onChanged: (value) {
@@ -66,7 +68,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.all(height1*0.03),
                   child: TextField(
                     textAlign: TextAlign.start,
                     onChanged: (value) {
@@ -80,7 +82,7 @@ class _SignUpState extends State<SignUp> {
                     keyboardType: TextInputType.emailAddress,
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: height1*0.02,),
                 Padding(
                   padding: EdgeInsets.only(left: 10),
                   child: Material(
@@ -105,7 +107,7 @@ class _SignUpState extends State<SignUp> {
                           });
                           setState(() {
                             showSpinner=false;
-                            player.play('Audio 2.mp3');
+                            player.play('Audio 1.mp3');
                           });
                         }
                         catch(e) {
@@ -119,7 +121,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: height1*0.01,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

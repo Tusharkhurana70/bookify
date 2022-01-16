@@ -22,7 +22,7 @@ class Quotess extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
-          padding: EdgeInsets.all(15),
+          padding: EdgeInsets.all(20),
           child: RichText(
             text: TextSpan(
                 children:[
