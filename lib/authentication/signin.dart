@@ -6,6 +6,7 @@ import 'signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 bool tushar = true;
 
@@ -122,12 +123,11 @@ class _SignInState extends State<SignIn> {
                                 showSpinner=false;
                                 player.play('Audio c.mp3');
                               });
-                            }
-                            catch(e) {
+                            } on FirebaseAuthException catch (error) {
+                              Fluttertoast.showToast(msg: error.message,gravity: ToastGravity.TOP);
                               setState(() {
                                 showSpinner=false;
                               });
-                              print(e);
                             }
                           },
                           child: Text('Sign In',style: TextStyle(color: Colors.white,fontSize: 18),),
@@ -141,7 +141,7 @@ class _SignInState extends State<SignIn> {
                         Text('Dont have an account?',style: TextStyle(color: Colors.black54),),
                         TextButton(
                           onPressed: () {
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (Context) {
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
                               return SignUp();
                             }));
                           },
@@ -159,3 +159,4 @@ class _SignInState extends State<SignIn> {
     );
   }
 }
+

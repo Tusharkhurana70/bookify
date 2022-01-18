@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import '../course.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 bool tushar = true;
 bool showSpinner=false;
@@ -76,9 +77,15 @@ class _SignUpState extends State<SignUp> {
                     },
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.lock_outline_rounded),
-                      hintText: 'Password      (At Least 6 Charac.)',hintStyle: TextStyle(color: Color(0xFFA7ADBA),fontSize: 20),
+                      suffixIcon: IconButton(icon: Icon(Icons.remove_red_eye),onPressed: () {
+                        setState(() {
+                          tushar = !tushar;
+                        });
+                      },),
+                      hintText: 'Password',hintStyle: TextStyle(color: Color(0xFFA7ADBA),fontSize: 20),
                     ),
                     style: TextStyle(color: Colors.black,fontSize: 20),
+                    obscureText: tushar,
                     keyboardType: TextInputType.emailAddress,
                   ),
                 ),
@@ -109,12 +116,11 @@ class _SignUpState extends State<SignUp> {
                             showSpinner=false;
                             player.play('Audio 1.mp3');
                           });
-                        }
-                        catch(e) {
+                        } on FirebaseAuthException catch (error) {
+                          Fluttertoast.showToast(msg: error.message,gravity: ToastGravity.TOP);
                           setState(() {
                             showSpinner=false;
                           });
-                          print(e);
                         }
                       },
                       child: Text('Sign Up',style: TextStyle(color: Colors.white,fontSize: 18),),

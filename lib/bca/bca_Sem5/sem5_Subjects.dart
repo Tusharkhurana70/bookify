@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'cg.dart';
+import 'ecm.dart';
+import 'os.dart';
+import 'wbp.dart';
 
 class Sem5Bca extends StatefulWidget {
   @override
@@ -25,6 +29,9 @@ class _Sem5BcaState extends State<Sem5Bca> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return ECM();
+                        }));
                       },
                       child: Image.asset('images/ec.png',),
                     ),
@@ -35,6 +42,9 @@ class _Sem5BcaState extends State<Sem5Bca> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return CG();
+                        }));
                       },
                       child: Image.asset('images/cg.png',),
                     ),
@@ -51,6 +61,9 @@ class _Sem5BcaState extends State<Sem5Bca> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return OS();
+                        }));
                       },
                       child: Image.asset('images/os.png',),
                     ),
@@ -61,6 +74,9 @@ class _Sem5BcaState extends State<Sem5Bca> {
                   children: [
                     TextButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return WBP();
+                        }));
                       },
                       child: Image.asset('images/php.png',),
                     ),

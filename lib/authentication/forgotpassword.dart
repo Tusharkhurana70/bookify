@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ForgotPassword extends StatefulWidget {
   @override
@@ -60,21 +61,17 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               showSpinner=true;
                             });
                             try{
-                              final existingUser= await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+                              await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+                              setState(() {
+                                showSpinner=false;
+                                Navigator.pop(context);
+                                Fluttertoast.showToast(msg: 'Check your mail for password reset link',gravity: ToastGravity.TOP);
+                              });
+                            } on FirebaseAuthException catch (error) {
+                              Fluttertoast.showToast(msg: error.message,gravity: ToastGravity.TOP);
                               setState(() {
                                 showSpinner=false;
                               });
-                            }
-                            catch(e){
-                              setState(() {
-                                showSpinner=false;
-                              });
-                              print(e);
-                            }
-                            if(email!=null){
-                              Navigator.pop(context);
-                            }else{
-                              Navigator.defaultRouteName;
                             }
                           },
                           child: Text('Submit',style: TextStyle(color: Colors.white,fontSize: 18),),
