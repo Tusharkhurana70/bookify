@@ -7,9 +7,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 bool tushar = true;
-
+final storage= FlutterSecureStorage();
 class SignIn extends StatefulWidget {
   @override
   _SignInState createState() => _SignInState();
@@ -21,6 +22,7 @@ class _SignInState extends State<SignIn> {
   bool showSpinner=false;
   @override
   Widget build(BuildContext context) {
+
     final height = MediaQuery.of(context).size.height;
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
@@ -113,12 +115,11 @@ class _SignInState extends State<SignIn> {
                               showSpinner=true;
                             });
                             try{
-                              final newUser=await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-                              if(newUser!=null){
+                              UserCredential userCredential=await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+                              await storage.write(key: "uid", value: userCredential.user?.uid);
                                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
                                   return Course();
                                 }));
-                              }
                               setState(() {
                                 showSpinner=false;
                                 player.play('Audio c.mp3');

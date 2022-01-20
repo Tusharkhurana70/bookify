@@ -1,7 +1,13 @@
+import 'package:bookifyy/authentication/welcomescreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'quotes.dart';
 import 'bca/bca_Semester.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'authentication/signin.dart';
+
+SignIn sign1= SignIn();
 
 class Course extends StatefulWidget {
   @override
@@ -77,6 +83,7 @@ class _CourseState extends State<Course> {
                     child: TextButton(
                       onPressed: () {
                         player.play('Audio a.mp3');
+                        Fluttertoast.showToast(msg: 'Comming Soon',gravity: ToastGravity.BOTTOM);
                       },
                       child: Text('BBA',style: TextStyle(color: Colors.white,fontSize: 20),),
                     ),
@@ -95,6 +102,7 @@ class _CourseState extends State<Course> {
                     child: TextButton(
                       onPressed: () {
                         player.play('Audio a.mp3');
+                        Fluttertoast.showToast(msg: 'Comming Soon',gravity: ToastGravity.SNACKBAR);
                       },
                       child: Text('BJMC',style: TextStyle(color: Colors.white,fontSize: 20),),
                     ),

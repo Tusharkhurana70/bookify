@@ -1,6 +1,7 @@
 import 'package:bookifyy/authentication/signin.dart';
 import 'package:bookifyy/authentication/signup.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override

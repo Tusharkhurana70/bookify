@@ -37,6 +37,7 @@ dependencies:
   path_provider: ^2.0.8
   url_launcher:
   auto_size_text: ^3.0.0
+  flutter_secure_storage: ^4.2.0
 
 dev_dependencies:
   flutter_test:
