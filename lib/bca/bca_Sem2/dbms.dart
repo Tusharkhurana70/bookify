@@ -12,8 +12,17 @@ class _DbmsState extends State<Dbms> {
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
     return Scaffold(
-      backgroundColor: Color(0xFFC7B7FE),
-      appBar: AppBar(backgroundColor: Color(0xFFC7B7FE),title: Text('DBMS',style: TextStyle(color: Colors.black),),),
+      backgroundColor: Color(0xFFEFF5FA),
+      appBar: AppBar(backgroundColor: Color(0xFFEFF5FA),title: Text('DBMS',style: TextStyle(color: Colors.black),),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.keyboard_backspace,color: Colors.black,),
+          );
+        },),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -25,7 +34,7 @@ class _DbmsState extends State<Dbms> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://docs.google.com/document/d/1tBp11glPyu8xsVbM2sA-eNBJhki6CTTG/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
+                        launch('https://docs.google.com/document/d/1RX5cHSSaQkGm6zwzhxTg9g2k8hRv6rL5/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
@@ -36,7 +45,7 @@ class _DbmsState extends State<Dbms> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1gWiqpO1mfubRdcxc91OCV4ofvrebz_YX/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1Vd6q-9oprjPu_IOseK_XIPPZ24QHsUGQ/view?usp=sharing');
                       },
                       child: Image.asset('images/prevppr.png'),
                     ),
@@ -53,7 +62,7 @@ class _DbmsState extends State<Dbms> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1veyhAHXZVHFeLD-QNV6U0tgI8TK8Ptjn/view?usp=sharing');
                       },
                       child: Image.asset('images/unit1.png'),
                     ),
@@ -64,7 +73,7 @@ class _DbmsState extends State<Dbms> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1JU0lIUbdGvFSw4atvk43KluCUtC3WtYz/view?usp=sharing');
                       },
                       child: Image.asset('images/unit2.png'),
                     ),
@@ -81,7 +90,7 @@ class _DbmsState extends State<Dbms> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1pp5VDFINa_LQlTOZ7igdrkiOUze2_F9j/view?usp=sharing');
                       },
                       child: Image.asset('images/unit3.png'),
                     ),
@@ -92,7 +101,7 @@ class _DbmsState extends State<Dbms> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1iEl38jMjv1ge0cb1LaSwI2WgrJiad31W/view?usp=sharing');
                       },
                       child: Image.asset('images/unit4.png'),
                     ),

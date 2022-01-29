@@ -12,8 +12,17 @@ class _Maths2State extends State<Maths2> {
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
     return Scaffold(
-      backgroundColor: Color(0xFF9EFF62),
-      appBar: AppBar(backgroundColor: Color(0xFF9EFF62),title: Text('Maths',style: TextStyle(color: Colors.black),),),
+      backgroundColor: Color(0xFFEFF5FA),
+      appBar: AppBar(backgroundColor: Color(0xFFEFF5FA),title: Text('Maths',style: TextStyle(color: Colors.black),),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.keyboard_backspace,color: Colors.black,),
+          );
+        },),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -25,7 +34,7 @@ class _Maths2State extends State<Maths2> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://docs.google.com/document/d/1tBp11glPyu8xsVbM2sA-eNBJhki6CTTG/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
+                        launch('https://docs.google.com/document/d/1z_gIzm2kwAXF5ohnpfI7qMsM0l5XoQzu/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
@@ -36,7 +45,7 @@ class _Maths2State extends State<Maths2> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1gWiqpO1mfubRdcxc91OCV4ofvrebz_YX/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/16XJsI8hCnWAsBLmwFqhw5WQC52tkemJd/view?usp=sharing');
                       },
                       child: Image.asset('images/prevppr.png'),
                     ),
@@ -53,7 +62,35 @@ class _Maths2State extends State<Maths2> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/16-tINtE-P8FcQqnwbraWUTEMoaKYlqRe/view?usp=sharing');
+                      },
+                      child: Image.asset('images/formulas.png'),
+                    ),
+                    Text('Formulas',style: TextStyle(color: Colors.black,fontSize: 17))
+                  ],
+                ),
+                Column(
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        launch('https://drive.google.com/file/d/1oIk3UagD-uwzYTQUZ9G8doiNz0aCiI4G/view?usp=sharing');
+                      },
+                      child: Image.asset('images/books.png'),
+                    ),
+                    Text('Books',style: TextStyle(color: Colors.black,fontSize: 16))
+                  ],
+                )
+              ],
+            ),
+            SizedBox(height: height1*0.1),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        launch('https://drive.google.com/file/d/1uYngK8rDxSr0-VszbwdmkdYVQ-D5BQDx/view?usp=sharing');
                       },
                       child: Image.asset('images/unit1.png'),
                     ),
@@ -64,7 +101,7 @@ class _Maths2State extends State<Maths2> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1-pAgMcoaFhRU3DDLXfJIwVswdXDITYZj/view?usp=sharing');
                       },
                       child: Image.asset('images/unit2.png'),
                     ),
@@ -81,7 +118,7 @@ class _Maths2State extends State<Maths2> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1lp24g9Py6EvlW-sk2mrgeQ52cDfmnIkc/view?usp=sharing');
                       },
                       child: Image.asset('images/unit3.png'),
                     ),
@@ -92,7 +129,7 @@ class _Maths2State extends State<Maths2> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/15NpzzUbGZLuMc8gVt_fSP562TBClKI8j/view?usp=sharing');
                       },
                       child: Image.asset('images/unit4.png'),
                     ),
@@ -100,7 +137,8 @@ class _Maths2State extends State<Maths2> {
                   ],
                 )
               ],
-            )
+            ),
+            SizedBox(height: height1*0.1),
           ],
         ),
       ),

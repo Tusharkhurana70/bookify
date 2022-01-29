@@ -1,3 +1,4 @@
+import 'package:bookifyy/authentication/passwordReset.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'bca_Sem1/sem1_Subjects.dart';
@@ -5,16 +6,18 @@ import 'bca_Sem2/sem2_Subjects.dart';
 import 'bca_Sem3/sem3_Subjects.dart';
 import 'bca_Sem4/sem4_Subjects.dart';
 import 'bca_Sem5/sem5_Subjects.dart';
-import 'bca_Sem6/sem6_Subjects.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:bookifyy/drawer/policy.dart';
+import 'package:bookifyy/drawer/terms.dart';
+import 'package:bookifyy/drawer/contact.dart';
+
 
 class BcaSem extends StatefulWidget {
   @override
   _BcaSemState createState() => _BcaSemState();
 }
-
 class _BcaSemState extends State<BcaSem> {
   @override
   Widget build(BuildContext context) {
@@ -28,15 +31,14 @@ class _BcaSemState extends State<BcaSem> {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-                accountName: Text('HY'),
-                accountEmail: Text('HY@gmail.com'),
+              accountName: Text('IPU Genie'),
+              accountEmail: Image.asset('images/ipugenie.png',height: 20,),
               currentAccountPicture: CircleAvatar(
                 child: ClipOval(
-                  child: Image.asset('images/cart2.jpg',fit: BoxFit.cover,width: 90,height: 90,),
+                  child: Image.asset('images/suggestions.gif',fit: BoxFit.cover,width: 90,height: 90,),
                 ),
               ),
               decoration: BoxDecoration(
-
                 image: DecorationImage(
                   image: AssetImage('images/lea.jpg'),fit: BoxFit.fill
                 )
@@ -51,27 +53,69 @@ class _BcaSemState extends State<BcaSem> {
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
+              leading: Icon(Icons.description),
+              title: Text('Privacy Policy'),
               onTap: () {
-                Fluttertoast.showToast(msg: 'Thinking About It',gravity: ToastGravity.CENTER);
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return Policy();
+                }));
               },
             ),
             ListTile(
               leading: Icon(Icons.description),
-              title: Text('Policies'),
+              title: Text('Terms & Conditions'),
               onTap: () {
-                Fluttertoast.showToast(msg: 'Its Your Part Sumit',gravity: ToastGravity.CENTER);
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Terms();
+                }));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Contact Us'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return AboutUs();
+                }));
               },
             ),
             Divider(),
             ListTile(
+              leading: Icon(Icons.password_rounded),
+              title: Text('Password Reset'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return PasswordReset();
+                }));
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.logout),
               title: Text('LogOut'),
-              onTap: ()  async {
-                await FirebaseAuth.instance.signOut();
-                await storage.delete(key: "uid");
-                Navigator.pushNamedAndRemoveUntil(context, '/welcome', (route) => false);
+              onTap: ()  {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text('LogOut'),
+                    content: Text('Are you sure you want to LogOut'),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('No'),
+                      ),
+                      TextButton(
+                        onPressed: () async {
+                          await FirebaseAuth.instance.signOut();
+                          await storage.delete(key: "uid");
+                          Navigator.pushNamedAndRemoveUntil(context, '/welcome', (route) => false);
+                        },
+                        child: Text('Yes'),
+                      )
+                    ],
+                  ),
+                );
               },
             ),
           ],
@@ -96,7 +140,7 @@ class _BcaSemState extends State<BcaSem> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 TextButton(
-                  onPressed: () {
+                  onPressed: () async{
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                       return Sem1Bca();
                     }));
@@ -149,9 +193,7 @@ class _BcaSemState extends State<BcaSem> {
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return Sem6Bca();
-                      }));
+                      Fluttertoast.showToast(msg: 'Coming Soon',gravity: ToastGravity.BOTTOM);
                     },
                     child: Image.asset('images/sem6.png')
                 )

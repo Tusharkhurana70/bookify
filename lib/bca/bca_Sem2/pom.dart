@@ -12,8 +12,17 @@ class _PomState extends State<Pom> {
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
     return Scaffold(
-      backgroundColor: Color(0xFFE4E5E7),
-      appBar: AppBar(backgroundColor: Color(0xFFE4E5E7),title: Text('Principle Of Management',style: TextStyle(color: Colors.black),),),
+      backgroundColor: Color(0xFFEFF5FA),
+      appBar: AppBar(backgroundColor: Color(0xFFEFF5FA),title: Text('Principle Of Management',style: TextStyle(color: Colors.black),),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.keyboard_backspace,color: Colors.black,),
+          );
+        },),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -25,7 +34,7 @@ class _PomState extends State<Pom> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://docs.google.com/document/d/1tBp11glPyu8xsVbM2sA-eNBJhki6CTTG/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
+                        launch('https://docs.google.com/document/d/19tZyl04hw7wUhBhavm3xvQkzPU9wu7Qf/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
@@ -36,7 +45,7 @@ class _PomState extends State<Pom> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1gWiqpO1mfubRdcxc91OCV4ofvrebz_YX/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1BNpC5CiEGSyanurXwb5E5y42xLwcnmnq/view?usp=sharing');
                       },
                       child: Image.asset('images/prevppr.png'),
                     ),
@@ -53,7 +62,7 @@ class _PomState extends State<Pom> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1fz3MTPTWyGsdFyaYV13uYbQCFinI4ANG/view?usp=sharing');
                       },
                       child: Image.asset('images/unit1.png'),
                     ),
@@ -64,7 +73,7 @@ class _PomState extends State<Pom> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1xBUTLfD7yob1vbYiam4co6vp3BZzo2gQ/view?usp=sharing');
                       },
                       child: Image.asset('images/unit2.png'),
                     ),
@@ -81,7 +90,7 @@ class _PomState extends State<Pom> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/169FG-Q6TlHaktVSS5CknphN0UMcPJn3I/view?usp=sharing');
                       },
                       child: Image.asset('images/unit3.png'),
                     ),
@@ -92,7 +101,7 @@ class _PomState extends State<Pom> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1b5Ii9e7TLx4BZfGTERNRV4KSEfRiB6IC/view?usp=sharing');
                       },
                       child: Image.asset('images/unit4.png'),
                     ),

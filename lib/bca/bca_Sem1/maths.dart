@@ -13,8 +13,17 @@ class _MathsState extends State<Maths> {
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
     return Scaffold(
-      backgroundColor: Color(0xFFFF7376),
-      appBar: AppBar(backgroundColor: Color(0xFFFF7376),title: Text('Maths',style: TextStyle(color: Colors.white),),),
+      backgroundColor: Color(0xFFEFF5FA),
+      appBar: AppBar(backgroundColor: Color(0xFFEFF5FA),title: Text('Maths',style: TextStyle(color: Colors.black),),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.keyboard_backspace,color: Colors.black,),
+          );
+        },),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -26,22 +35,22 @@ class _MathsState extends State<Maths> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://docs.google.com/document/d/1tBp11glPyu8xsVbM2sA-eNBJhki6CTTG/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
+                        launch('https://docs.google.com/document/d/1n_hKaqG9LZy1Jqo_6upiqmAbJqNaZMHh/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
-                    Text('Syllabus',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Syllabus',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 ),
                 Column(
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1gWiqpO1mfubRdcxc91OCV4ofvrebz_YX/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1T-0NGXRA-W-TE8BfkaRNHdhC9F45Ebcw/view?usp=sharing');
                       },
                       child: Image.asset('images/prevppr.png'),
                     ),
-                    Text('Prev Year PPR',style: TextStyle(color: Colors.white,fontSize: 16))
+                    Text('Prev Year PPR',style: TextStyle(color: Colors.black,fontSize: 16))
                   ],
                 )
               ],
@@ -54,54 +63,27 @@ class _MathsState extends State<Maths> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1xico76O_pHmOT4oWrpMI5pOcsQipcoJQ/view?usp=sharing');
                       },
-                      child: Image.asset('images/unit1.png'),
+                      child: Image.asset('images/formulas.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Formulas',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 ),
                 Column(
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/137cNcpcE31-Tnhkdu053_Jy62HI-WICp/view?usp=sharing');
                       },
-                      child: Image.asset('images/unit2.png'),
+                      child: Image.asset('images/books.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Book',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 )
               ],
             ),
             SizedBox(height: height1*0.1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
-                      },
-                      child: Image.asset('images/unit3.png'),
-                    ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
-                  ],
-                ),
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
-                      },
-                      child: Image.asset('images/unit4.png'),
-                    ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
-                  ],
-                )
-              ],
-            )
           ],
         ),
       ),

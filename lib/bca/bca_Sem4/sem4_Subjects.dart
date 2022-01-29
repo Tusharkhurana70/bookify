@@ -1,3 +1,5 @@
+import 'package:bookifyy/drawer/contact.dart';
+import 'package:bookifyy/drawer/terms.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'cn.dart';
@@ -9,6 +11,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bookifyy/authentication/passwordReset.dart';
+import 'package:bookifyy/drawer/policy.dart';
+
 
 class Sem4Bca extends StatefulWidget {
   @override
@@ -28,15 +33,14 @@ class _Sem4BcaState extends State<Sem4Bca> {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text('HY'),
-              accountEmail: Text('HY@gmail.com'),
+              accountName: Text('IPU Genie'),
+              accountEmail: Image.asset('images/ipugenie.png',height: 20,),
               currentAccountPicture: CircleAvatar(
                 child: ClipOval(
-                  child: Image.asset('images/cart2.jpg',fit: BoxFit.cover,width: 90,height: 90,),
+                  child: Image.asset('images/suggestions.gif',fit: BoxFit.cover,width: 90,height: 90,),
                 ),
               ),
               decoration: BoxDecoration(
-
                   image: DecorationImage(
                       image: AssetImage('images/lea.jpg'),fit: BoxFit.fill
                   )
@@ -51,27 +55,69 @@ class _Sem4BcaState extends State<Sem4Bca> {
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
+              leading: Icon(Icons.description),
+              title: Text('Privacy Policy'),
               onTap: () {
-                Fluttertoast.showToast(msg: 'Thinking About It',gravity: ToastGravity.CENTER);
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return Policy();
+                }));
               },
             ),
             ListTile(
               leading: Icon(Icons.description),
-              title: Text('Policies'),
+              title: Text('Terms & Conditions'),
               onTap: () {
-                Fluttertoast.showToast(msg: 'Its Your Part Sumit',gravity: ToastGravity.CENTER);
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Terms();
+                }));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Contact Us'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return AboutUs();
+                }));
               },
             ),
             Divider(),
             ListTile(
+              leading: Icon(Icons.password_rounded),
+              title: Text('Password Reset'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return PasswordReset();
+                }));
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.logout),
               title: Text('LogOut'),
-              onTap: ()  async {
-                await FirebaseAuth.instance.signOut();
-                await storage.delete(key: "uid");
-                Navigator.pushNamedAndRemoveUntil(context, '/welcome', (route) => false);
+              onTap: ()  {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text('LogOut'),
+                    content: Text('Are you sure you want to LogOut'),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('No'),
+                      ),
+                      TextButton(
+                        onPressed: () async {
+                          await FirebaseAuth.instance.signOut();
+                          await storage.delete(key: "uid");
+                          Navigator.pushNamedAndRemoveUntil(context, '/welcome', (route) => false);
+                        },
+                        child: Text('Yes'),
+                      )
+                    ],
+                  ),
+                );
               },
             ),
           ],

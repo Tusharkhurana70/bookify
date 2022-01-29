@@ -13,8 +13,17 @@ class _PhysicsState extends State<Physics> {
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
     return Scaffold(
-      backgroundColor: Color(0xFFC5B3E3),
-      appBar: AppBar(backgroundColor: Color(0xFFC5B3E3),title: Text('Physics',style: TextStyle(color: Colors.white,),),),
+      backgroundColor: Color(0xFFEFF5FA),
+      appBar: AppBar(backgroundColor: Color(0xFFEFF5FA),title: Text('Physics',style: TextStyle(color: Colors.black,),),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.keyboard_backspace,color: Colors.black,),
+          );
+        },),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -26,22 +35,22 @@ class _PhysicsState extends State<Physics> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://docs.google.com/document/d/1tBp11glPyu8xsVbM2sA-eNBJhki6CTTG/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
+                        launch('https://docs.google.com/document/d/17xVeoN70K5rn3tKZvudGVzuLj81MENfv/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
-                    Text('Syllabus',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Syllabus',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 ),
                 Column(
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1gWiqpO1mfubRdcxc91OCV4ofvrebz_YX/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1YNk2Fl201gndNph9h6IJxtsnkDfU7ePi/view?usp=sharing');
                       },
                       child: Image.asset('images/prevppr.png'),
                     ),
-                    Text('Prev Year PPR',style: TextStyle(color: Colors.white,fontSize: 16))
+                    Text('Prev Year PPR',style: TextStyle(color: Colors.black,fontSize: 16))
                   ],
                 )
               ],
@@ -54,22 +63,22 @@ class _PhysicsState extends State<Physics> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1Y7ZIEOASD8EDkBMkE8SA0DDWW7I357rw/view?usp=sharing');
                       },
                       child: Image.asset('images/unit1.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 ),
                 Column(
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/15sicOlQ0YdRnEBTk26op9KcNA9_p66-F/view?usp=sharing');
                       },
                       child: Image.asset('images/unit2.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 )
               ],
@@ -82,22 +91,22 @@ class _PhysicsState extends State<Physics> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1fsTykoOOjupmiWWQo3bQ-QghAqwksnhx/view?usp=sharing');
                       },
                       child: Image.asset('images/unit3.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 ),
                 Column(
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1jO9kbr7x1lcxlzuP6F-P2sg2sMyVI7bZ/view?usp=sharing');
                       },
                       child: Image.asset('images/unit4.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 )
               ],

@@ -13,8 +13,17 @@ class _Maths4State extends State<Maths4> {
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
     return Scaffold(
-      backgroundColor: Color(0xFFF6B561),
-      appBar: AppBar(backgroundColor: Color(0xFFF6B561),title: Text('Maths',style: TextStyle(color: Colors.white),),),
+      backgroundColor: Color(0xFFEFF5FA),
+      appBar: AppBar(backgroundColor: Color(0xFFEFF5FA),title: Text('Maths',style: TextStyle(color: Colors.black),),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.keyboard_backspace,color: Colors.black,),
+          );
+        },),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -30,7 +39,7 @@ class _Maths4State extends State<Maths4> {
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
-                    Text('Syllabus',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Syllabus',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 ),
                 Column(
@@ -41,7 +50,7 @@ class _Maths4State extends State<Maths4> {
                       },
                       child: Image.asset('images/prevppr.png'),
                     ),
-                    Text('Prev Year PPR',style: TextStyle(color: Colors.white,fontSize: 16))
+                    Text('Prev Year PPR',style: TextStyle(color: Colors.black,fontSize: 16))
                   ],
                 )
               ],
@@ -58,7 +67,7 @@ class _Maths4State extends State<Maths4> {
                       },
                       child: Image.asset('images/unit1.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 ),
                 Column(
@@ -69,7 +78,7 @@ class _Maths4State extends State<Maths4> {
                       },
                       child: Image.asset('images/unit2.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 )
               ],
@@ -86,7 +95,7 @@ class _Maths4State extends State<Maths4> {
                       },
                       child: Image.asset('images/unit3.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 ),
                 Column(
@@ -97,7 +106,7 @@ class _Maths4State extends State<Maths4> {
                       },
                       child: Image.asset('images/unit4.png'),
                     ),
-                    Text('Unit',style: TextStyle(color: Colors.white,fontSize: 17))
+                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 )
               ],

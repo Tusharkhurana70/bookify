@@ -8,20 +8,17 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 bool tushar = true;
+String email;
 bool showSpinner=false;
 class SignUp extends StatefulWidget {
   @override
   _SignUpState createState() => _SignUpState();
 }
-
 class _SignUpState extends State<SignUp> {
   final auth=FirebaseAuth.instance;
-  String email;
   String password;
-  String username;
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
@@ -37,22 +34,7 @@ class _SignUpState extends State<SignUp> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset('images/signup3.png'),
-                Padding(
-                  padding: EdgeInsets.all(height1*0.03),
-                  child: TextField(
-                    textAlign: TextAlign.start,
-                    onChanged: (value) {
-                      username = value;
-                    },
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.account_circle_outlined),
-                      hintText: 'User Name',hintStyle: TextStyle(color: Color(0xFFA7ADBA),fontSize: 20),
-                    ),
-                    style: TextStyle(color: Colors.black,fontSize: 20),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                ),
+                Image.asset('images/signup2.gif',height: height1*0.47,),
                 Padding(
                   padding: EdgeInsets.all(height1*0.03),
                   child: TextField(
@@ -99,29 +81,28 @@ class _SignUpState extends State<SignUp> {
                     child: TextButton(
                       style: ButtonStyle(fixedSize: MaterialStateProperty.all(Size(290, 61)),backgroundColor: MaterialStateProperty.all(Color(0xFF00C2EE)),shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.0)))),
                       onPressed: () async{
-                        try{
-                          setState(() {
-                            showSpinner=true;
-
-                          });
-                          final newUser=await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
-                          setState(() {
-                            if(newUser!=null){
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                                return Course();
-                              }));
-                            }
-                          });
-                          setState(() {
-                            showSpinner=false;
-                            player.play('Audio 1.mp3');
-                          });
-                        } on FirebaseAuthException catch (error) {
-                          Fluttertoast.showToast(msg: error.message,gravity: ToastGravity.TOP);
-                          setState(() {
-                            showSpinner=false;
-                          });
-                        }
+                          try{
+                            setState(() {
+                              showSpinner=true;
+                            });
+                            final newUser=await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+                            setState(() {
+                              if(newUser!=null){
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                                  return Course();
+                                }));
+                              }
+                            });
+                            setState(() {
+                              showSpinner=false;
+                              player.play('Audio 1.mp3');
+                            });
+                          } on FirebaseAuthException catch (error) {
+                            Fluttertoast.showToast(msg: error.message,gravity: ToastGravity.TOP);
+                            setState(() {
+                              showSpinner=false;
+                            });
+                          }
                       },
                       child: Text('Sign Up',style: TextStyle(color: Colors.white,fontSize: 18),),
                     ),

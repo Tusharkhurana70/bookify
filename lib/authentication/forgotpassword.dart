@@ -14,6 +14,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   bool showSpinner=false;
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    var padding = MediaQuery.of(context).viewPadding;
+    double height1 = height - padding.top - padding.bottom;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -29,7 +32,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset('images/ForgotPassword.png'),
+                    Image.asset('images/forgotpass.gif',height: height1*0.45,),
                     Padding(padding:EdgeInsets.all(15),child: Text('Forgot \nPassword?',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
                     Padding(padding:EdgeInsets.only(left: 15),child: Text('Dont worry! It happens. Please enter the \naddress associated with your account.',style: TextStyle(fontSize: 18),)),
                     Padding(
@@ -49,13 +52,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                     SizedBox(height: 15),
                     Padding(
-                      padding: EdgeInsets.only(left: 10),
+                      padding: EdgeInsets.only(left: 50),
                       child: Material(
                         borderRadius: BorderRadius.circular(28),
                         elevation: 5,
                         shadowColor: Colors.lightBlueAccent,
                         child: TextButton(
-                          style: ButtonStyle(shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.0))),fixedSize: MaterialStateProperty.all(Size(290,61)),backgroundColor: MaterialStateProperty.all(Color(0xFF00C2EE))),
+                          style: ButtonStyle(alignment: Alignment.center,shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.0))),fixedSize: MaterialStateProperty.all(Size(290,61)),backgroundColor: MaterialStateProperty.all(Color(0xFF00C2EE))),
                           onPressed: () async{
                             setState(() {
                               showSpinner=true;

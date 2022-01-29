@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bookifyy/drawer/policy.dart';
 
 
 class Sem6Bca extends StatefulWidget {
@@ -24,8 +25,8 @@ class _Sem6BcaState extends State<Sem6Bca> {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text('HY'),
-              accountEmail: Text('HY@gmail.com'),
+              accountName: Text('User'),
+              accountEmail: Text('User@gmail.com'),
               currentAccountPicture: CircleAvatar(
                 child: ClipOval(
                   child: Image.asset('images/cart2.jpg',fit: BoxFit.cover,width: 90,height: 90,),
@@ -57,17 +58,39 @@ class _Sem6BcaState extends State<Sem6Bca> {
               leading: Icon(Icons.description),
               title: Text('Policies'),
               onTap: () {
-                Fluttertoast.showToast(msg: 'Its Your Part Sumit',gravity: ToastGravity.CENTER);
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Policy();
+                }));
               },
             ),
             Divider(),
             ListTile(
               leading: Icon(Icons.logout),
               title: Text('LogOut'),
-              onTap: ()  async {
-                await FirebaseAuth.instance.signOut();
-                await storage.delete(key: "uid");
-                Navigator.pushNamedAndRemoveUntil(context, '/welcome', (route) => false);
+              onTap: ()  {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text('LogOut'),
+                    content: Text('Are you sure you want to LogOut'),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('No'),
+                      ),
+                      TextButton(
+                        onPressed: () async {
+                          await FirebaseAuth.instance.signOut();
+                          await storage.delete(key: "uid");
+                          Navigator.pushNamedAndRemoveUntil(context, '/welcome', (route) => false);
+                        },
+                        child: Text('Yes'),
+                      )
+                    ],
+                  ),
+                );
               },
             ),
           ],

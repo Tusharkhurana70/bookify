@@ -13,8 +13,17 @@ class _CState extends State<C> {
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
     return Scaffold(
-      backgroundColor: Colors.yellowAccent,
-      appBar: AppBar(backgroundColor: Colors.yellowAccent,title: Text('Information Technology',style: TextStyle(color: Colors.black),),),
+      backgroundColor: Color(0xFFEFF5FA),
+      appBar: AppBar(backgroundColor: Color(0xFFEFF5FA),title: Text('C Language',style: TextStyle(color: Colors.black),),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.keyboard_backspace,color: Colors.black,),
+          );
+        },),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -26,7 +35,7 @@ class _CState extends State<C> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://docs.google.com/document/d/1tBp11glPyu8xsVbM2sA-eNBJhki6CTTG/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
+                        launch('https://docs.google.com/document/d/1QLescqh_k5n8R8JeE-et1H-XZ9fTTDjK/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
@@ -37,7 +46,7 @@ class _CState extends State<C> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1gWiqpO1mfubRdcxc91OCV4ofvrebz_YX/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1WNAdYXpcJAIj1o9go_iwXInON9bRgZHJ/view?usp=sharing');
                       },
                       child: Image.asset('images/prevppr.png'),
                     ),
@@ -54,7 +63,7 @@ class _CState extends State<C> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1D_yRCx1bcLwCNQtLZxQ0KUykNr4V4zmo/view?usp=sharing');
                       },
                       child: Image.asset('images/unit1.png'),
                     ),
@@ -65,7 +74,7 @@ class _CState extends State<C> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1iM1YDkmOE-SB5XU0IwRHqeUHv6j51qxy/view?usp=sharing');
                       },
                       child: Image.asset('images/unit2.png'),
                     ),
@@ -82,7 +91,7 @@ class _CState extends State<C> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1GlsEpfdOIY1Ot93vG1LbZsK277O7a5hJ/view?usp=sharing');
                       },
                       child: Image.asset('images/unit3.png'),
                     ),
@@ -93,7 +102,7 @@ class _CState extends State<C> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/10pNEEQ1jMyKrUqR0PGAs4-zVWF1K28LH/view?usp=sharing');
                       },
                       child: Image.asset('images/unit4.png'),
                     ),
