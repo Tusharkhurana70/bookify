@@ -1,7 +1,8 @@
 import 'package:bookifyy/authentication/signin.dart';
 import 'package:bookifyy/authentication/signup.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:bookifyy/drawer/terms.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -45,7 +46,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             text: TextSpan(
                 children: [
                   TextSpan(text: 'By creating an account, you are agreeing \n               to our',style: TextStyle(color: Color(0xFFA1A7B0),fontSize: 13)),
-                  TextSpan(text: ' Terms of Service',style: TextStyle(color: Color(0xFF243249),fontSize: 15,fontWeight: FontWeight.w600)),
+                  TextSpan(text: ' Terms & Conditions',style: TextStyle(color: Color(0xFF243249),fontSize: 15,fontWeight: FontWeight.w600),recognizer: TapGestureRecognizer()..onTap=() {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return Terms();
+                    }));
+                  }),
                 ]
             ),
           )
@@ -54,3 +59,4 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 }
+

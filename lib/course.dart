@@ -1,5 +1,3 @@
-import 'package:bookifyy/authentication/welcomescreen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'quotes.dart';
 import 'bca/bca_Semester.dart';
@@ -83,7 +81,7 @@ class _CourseState extends State<Course> {
                     child: TextButton(
                       onPressed: () {
                         player.play('Audio a.mp3');
-                        Fluttertoast.showToast(msg: 'Comming Soon',gravity: ToastGravity.BOTTOM);
+                        Fluttertoast.showToast(msg: 'Coming Soon',gravity: ToastGravity.BOTTOM);
                       },
                       child: Text('BBA',style: TextStyle(color: Colors.white,fontSize: 20),),
                     ),
@@ -102,7 +100,7 @@ class _CourseState extends State<Course> {
                     child: TextButton(
                       onPressed: () {
                         player.play('Audio a.mp3');
-                        Fluttertoast.showToast(msg: 'Comming Soon',gravity: ToastGravity.SNACKBAR);
+                        Fluttertoast.showToast(msg: 'Coming Soon',gravity: ToastGravity.SNACKBAR);
                       },
                       child: Text('BJMC',style: TextStyle(color: Colors.white,fontSize: 20),),
                     ),

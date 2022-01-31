@@ -122,7 +122,7 @@ class _BcaSemState extends State<BcaSem> {
         ),
       ),
       backgroundColor: Colors.white,
-      appBar: AppBar(shadowColor: Colors.blueAccent,backgroundColor: Colors.white,title: Text('Select your Semester',style: TextStyle(color: Colors.black),),
+      appBar: AppBar(shadowColor: Colors.blueAccent,backgroundColor: Colors.white,title: Text('Select Your Semester',style: TextStyle(color: Colors.black),),
       leading: Builder(builder: (context) {
         return IconButton(
           onPressed: () {

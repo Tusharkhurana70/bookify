@@ -121,7 +121,7 @@ class _Sem5BcaState extends State<Sem5Bca> {
           ],
         ),
       ),
-      appBar: AppBar(backgroundColor: Colors.white,title: Text('Select Your Subjects',style: TextStyle(color: Colors.black,),),
+      appBar: AppBar(shadowColor: Colors.blueAccent,backgroundColor: Colors.white,title: Text('Select Your Subjects',style: TextStyle(color: Colors.black,),),
         leading: Builder(builder: (context) {
           return IconButton(
             onPressed: () {
