@@ -1,9 +1,11 @@
+import 'package:bookifyy/otherCourse/app.dart';
 import 'package:flutter/material.dart';
 import 'quotes.dart';
 import 'bca/bca_Semester.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'authentication/signin.dart';
+import 'otherCourse/web.dart';
 
 SignIn sign1= SignIn();
 
@@ -110,7 +112,7 @@ class _CourseState extends State<Course> {
             ],
           ),
           SizedBox(height: height1*0.08,),
-          Text('Our Other Courses',style: TextStyle(fontSize: 25),),
+          Text('Our Recommended Courses',style: TextStyle(fontSize: 25),),
           SizedBox(height: height1*0.03,),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -118,11 +120,17 @@ class _CourseState extends State<Course> {
               children: [
                 TextButton(
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return WebDevelopment();
+                    }));
                   },
                   child: Image(width: 300,height: 200,image: AssetImage('images/webd.jpg'),),
                 ),
                 TextButton(
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return AppDevelopment();
+                    }));
                   },
                   child: Image(width: 300,height: 200,image: AssetImage('images/ad.png'),),
                 )
