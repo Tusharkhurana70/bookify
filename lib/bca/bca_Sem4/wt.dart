@@ -35,7 +35,7 @@ class _WTState extends State<WT> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://docs.google.com/document/d/1tBp11glPyu8xsVbM2sA-eNBJhki6CTTG/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
+                        launch('https://docs.google.com/document/d/18f4JQa329zyx7Kp1BjHDaFzcknUURxu3/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
@@ -46,11 +46,11 @@ class _WTState extends State<WT> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1gWiqpO1mfubRdcxc91OCV4ofvrebz_YX/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1Q6X7u3rLxvgAb1xBHAzVGBChrAPUgWAX/view?usp=sharing');
                       },
-                      child: Image.asset('images/prevppr.png'),
+                      child: Image.asset('images/books.png'),
                     ),
-                    Text('Prev Year PPR',style: TextStyle(color: Colors.black,fontSize: 16))
+                    Text('Book',style: TextStyle(color: Colors.black,fontSize: 16))
                   ],
                 )
               ],
@@ -63,7 +63,7 @@ class _WTState extends State<WT> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1Uf7JlEzFocGjlsLoXY7AtoJSN_roN7is/view?usp=sharing');
                       },
                       child: Image.asset('images/unit1.png'),
                     ),
@@ -74,7 +74,7 @@ class _WTState extends State<WT> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1oGs91h3ZA2KDtEZybF8y8-1WamyM4nS4/view?usp=sharing');
                       },
                       child: Image.asset('images/unit2.png'),
                     ),
@@ -91,24 +91,14 @@ class _WTState extends State<WT> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1jk9chvPfiRd31pS71CekOT5L0TexC94L/view?usp=sharing');
                       },
                       child: Image.asset('images/unit3.png'),
                     ),
                     Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
                   ],
                 ),
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
-                      },
-                      child: Image.asset('images/unit4.png'),
-                    ),
-                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
-                  ],
-                )
+
               ],
             )
           ],

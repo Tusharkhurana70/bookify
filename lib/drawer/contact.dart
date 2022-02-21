@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AboutUs extends StatelessWidget {
   @override
@@ -54,6 +55,25 @@ class AboutUs extends StatelessWidget {
                       color: Colors.black,
                     ),
                     title: Text('Tusharkhurana70@gmail.com',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.all(25.0),
+                child: TextButton(
+                  onPressed: () {
+                    launch('https://sites.google.com/view/ipu-genie/home?authuser=0');
+                  },
+                  child: ListTile(
+                    leading: Icon(FontAwesomeIcons.globe,
+                      color: Colors.black,
+                    ),
+                    title: Text('Visit Our Website',
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,

@@ -70,7 +70,7 @@ class Policy extends StatelessWidget {
               Padding(padding:EdgeInsets.all(20),child: Text('These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13 years of age. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.',style: TextStyle(fontSize: 17,))),
               Padding(padding:EdgeInsets.all(15),child: Text('Changes To This Privacy Policy',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold))),
               Padding(padding:EdgeInsets.all(20),child: Text('I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.\n'
-                  '\nThis policy is effective as of 24-01-2022',style: TextStyle(fontSize: 17,))),
+                  '\nThis policy is effective as of 2022-02-01',style: TextStyle(fontSize: 17,))),
               Padding(padding:EdgeInsets.all(15),child: Text('Contact Us',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold))),
               Padding(padding:EdgeInsets.all(20),child: Text('If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at: tusharkhurana70@gmail.com',style: TextStyle(fontSize: 17,))),
             ],

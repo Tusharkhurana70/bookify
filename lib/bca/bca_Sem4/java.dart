@@ -35,7 +35,7 @@ class _JavaState extends State<Java> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://docs.google.com/document/d/1tBp11glPyu8xsVbM2sA-eNBJhki6CTTG/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
+                        launch('https://docs.google.com/document/d/1MdFlzw7udtJ7yaDdXQPIK4lu_Uax557o/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
@@ -46,11 +46,11 @@ class _JavaState extends State<Java> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1gWiqpO1mfubRdcxc91OCV4ofvrebz_YX/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1SBso9obm6B1OaTetNiQegTTSuF2Zg5rE/view?usp=sharing');
                       },
                       child: Image.asset('images/prevppr.png'),
                     ),
-                    Text('Prev Year PPR',style: TextStyle(color: Colors.black,fontSize: 16))
+                    Text('Basics',style: TextStyle(color: Colors.black,fontSize: 16))
                   ],
                 )
               ],
@@ -63,7 +63,7 @@ class _JavaState extends State<Java> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1PjwmDhRopwdSmrB67r5h0JdMQLX7m8r4/view?usp=sharing');
                       },
                       child: Image.asset('images/unit1.png'),
                     ),
@@ -74,7 +74,7 @@ class _JavaState extends State<Java> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1lJuEA_BU9gdVvz61WqMED6y_GIP4cxYc/view?usp=sharing');
                       },
                       child: Image.asset('images/unit2.png'),
                     ),
@@ -83,34 +83,6 @@ class _JavaState extends State<Java> {
                 )
               ],
             ),
-            SizedBox(height: height1*0.1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
-                      },
-                      child: Image.asset('images/unit3.png'),
-                    ),
-                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
-                  ],
-                ),
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
-                      },
-                      child: Image.asset('images/unit4.png'),
-                    ),
-                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
-                  ],
-                )
-              ],
-            )
           ],
         ),
       ),

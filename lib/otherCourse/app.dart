@@ -36,7 +36,7 @@ class AppDevelopment extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          launch('https://www.freecodecamp.org/');
+                          launch('https://www.udacity.com/course/new-android-fundamentals--ud851');
                         },
                         child: Text('Ok'),
                       )
@@ -45,9 +45,9 @@ class AppDevelopment extends StatelessWidget {
                 );
               },
               iconSize: 120,
-              icon: Image.asset('images/freecode.png',height: 150,),
+              icon: Image.asset('images/udacity.png',height: 150,),
             ),
-            Padding(padding: EdgeInsets.all(20),child: Text('freeCodeCamp provides a whole curriculum on web development where you can learn for free. It is an interactive learning environment where you will go through a series of challenges and build projects along the way.',style: TextStyle(fontSize: 17),),)
+            Padding(padding: EdgeInsets.all(20),child: Text('App development course by Udacity blends theory and practice to help you build great apps the right way. In this course, you will work with instructors step-by-step to build a cloud-connected Android app, and learn best practices of mobile development, and Android development in particular.',style: TextStyle(fontSize: 17),),)
           ],
         ),
       ),

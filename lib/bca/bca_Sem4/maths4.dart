@@ -35,7 +35,7 @@ class _Maths4State extends State<Maths4> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://docs.google.com/document/d/1tBp11glPyu8xsVbM2sA-eNBJhki6CTTG/edit?usp=sharing&ouid=107269545129995846346&rtpof=true&sd=true');
+                        launch('https://drive.google.com/file/d/11qp9C1bFB3WJLqI9mfJXCgpb8InKMvDd/view?usp=sharing');
                       },
                       child: Image.asset('images/syllabus.png'),
                     ),
@@ -46,71 +46,15 @@ class _Maths4State extends State<Maths4> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        launch('https://drive.google.com/file/d/1gWiqpO1mfubRdcxc91OCV4ofvrebz_YX/view?usp=sharing');
+                        launch('https://drive.google.com/file/d/1Q7ycUwVPMZvm2CQuOLKfRSZItzKfQ0ZT/view?usp=sharing');
                       },
-                      child: Image.asset('images/prevppr.png'),
+                      child: Image.asset('images/books.png'),
                     ),
-                    Text('Prev Year PPR',style: TextStyle(color: Colors.black,fontSize: 16))
+                    Text('Book',style: TextStyle(color: Colors.black,fontSize: 16))
                   ],
                 )
               ],
             ),
-            SizedBox(height: height1*0.1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
-                      },
-                      child: Image.asset('images/unit1.png'),
-                    ),
-                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
-                  ],
-                ),
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
-                      },
-                      child: Image.asset('images/unit2.png'),
-                    ),
-                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
-                  ],
-                )
-              ],
-            ),
-            SizedBox(height: height1*0.1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        launch('https://drive.google.com/file/d/1NEGWntsFV9qLmyEGxzMfucMd6iVJWe9k/view?usp=sharing');
-                      },
-                      child: Image.asset('images/unit3.png'),
-                    ),
-                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
-                  ],
-                ),
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        launch('https://drive.google.com/file/d/1DNE8zu04hv6RWFlXjN15GQnWDs5g9xPa/view?usp=sharing');
-                      },
-                      child: Image.asset('images/unit4.png'),
-                    ),
-                    Text('Unit',style: TextStyle(color: Colors.black,fontSize: 17))
-                  ],
-                )
-              ],
-            )
           ],
         ),
       ),

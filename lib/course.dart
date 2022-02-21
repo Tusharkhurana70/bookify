@@ -117,6 +117,7 @@ class _CourseState extends State<Course> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TextButton(
                   onPressed: () {

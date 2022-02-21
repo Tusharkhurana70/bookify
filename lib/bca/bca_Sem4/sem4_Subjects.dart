@@ -7,7 +7,6 @@ import 'java.dart';
 import 'maths4.dart';
 import 'se.dart';
 import 'wt.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
